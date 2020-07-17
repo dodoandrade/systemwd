@@ -11,17 +11,17 @@
 </head>
 <body id="fundo">	
 
-<div class="card" id="tela-login">
+<div class="card " id="tela-login">
  <!-- <img src="..." class="card-img-top" alt="...">-->
   <div class="card-body">
-  <form>
+  <form action="controle/fazLogin.php" method="post">
   <div class="form-group">
     <label>Login</label>
-    <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Informe seu email">
+    <input type="text" name="usuario" class="form-control" placeholder="Informe seu nome de usuário">
      </div>
   <div class="form-group">
     <label for="">Senha</label>
-    <input type="password" class="form-control" id="" placeholder="Insira sua senha">
+    <input type="password" name="senha" class="form-control" placeholder="Insira sua senha">
   </div>
 
   <button type="submit" class="btn btn-success btn-block">Entrar</button>
@@ -29,6 +29,10 @@
     
   </div>
 </div>
- 
+<?php if (isset($_GET['erro'])) { ?>
+  <div class="alert alert-danger" role="alert" >
+    Usuário e/ou senha inválidos!
+  </div>
+<?php   }   ?>
 </body>
 </html>
